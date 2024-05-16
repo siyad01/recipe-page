@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Recipe page</title>
+
+  <style>
+    .card{
+      display: none;
+    }
+    body{
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      font-family: "Outfit";
+    }
+    h1,h2,h5,h6{
+      font-family: "Young serif";
+    }
+    #top-img{
+      position: relative;
+    }
+    .sec_top-img{
+      height: 24vh;
+    }
+    .sec_top-img img{
+      max-width: 100%;
+    }
+    #main-sec{
+      position: relative;
+    }
+    .main_sec_cont{
+      padding: 1.2em;
+      
+    }
+    .title{
+      font-size: 1.85em;
+      margin-top: -0.1em;
+      
+    }
+    .sec_txt_p1{
+      font-size:0.95em ;
+      margin-top: -0.5em;
+      margin-bottom: 0;
+    }
+    #prep-sec{
+      position: relative;
+    }
+    .prep-sec-cont{
+      padding: 1.2em;
+      background: hsl(330, 100%, 98%);
+      margin: 1.5rem;
+      border-radius: 1em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .prep-title{
+      font-size: 1em;
+      margin-left: 0.4rem;
+      margin-top: -0.3rem;
+      color: hsl(332, 51%, 32%);
+    }
+    .pr-sec-list{
+      margin-top: -0.3rem;
+      margin-left: -0.5em;
+      line-height: 1.5em;
+    }
+    .pr-sec-list span{
+      font-weight: 600;
+      margin-left: 0.4em;
+      margin-right: 0.3em;
+    }
+    .pr-sec-list li::marker{
+      color:hsl(332, 51%, 32%);
+    }
+    .prep-p{
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0.5rem;
+    }
+    #ingre-sec{
+      position: relative;
+    }
+    .ingr-sec-cont{
+      padding: 1.2em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .in-title{
+      color: hsl(14, 45%, 36%);
+      font-weight: 400;
+    }
+    .ingr-sec-list{
+      margin-left: -0.8em;
+      margin-top: -0.3em;
+      font-size: 0.92em;
+      
+    }
+    .ingr-sec-list li{
+      line-height: 2em;
+      
+    }
+    .ingr-sec-list li::marker{
+      color:hsl(14, 45%, 36%)
+    }
+    .spac-span{
+      margin-left: 0.6rem;
+    }
+    .spn-sp{
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0.5rem;
+    }
+    #liner{
+      position: relative;
+      width: 85%;
+      margin-left: 1.4rem;
+      margin-top: 0;
+    }
+    .hr-1{
+      color: hsl(30, 18%, 87%);
+      margin-bottom: 0;
+    }
+
+    #inst-sec{
+      position: relative;
+    }
+    .ins-sec-cont{
+      padding: 1.2em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .prp-list{
+      margin-left: -0.6em;
+      margin-bottom: 0;
+    }
+    .sp-span{
+      margin-left: 1.6em;
+    }
+    #nutr-sec{
+      position: relative;
+    }
+    .nutr-sec-cont{
+      padding: 1.2em;
+      margin-top: 0;
+      margin-bottom: 0;
+      
+    }
+    .space-span{
+      color: hsl(14, 45%, 36%);
+      margin-left: 5em;
+      font-weight: 600;
+    }
+    .nutr-sec-txt{
+      font-size: 0.9em;
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+    .h6-1{
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 0.8em;
+      font-weight: 500;
+      margin-left: 3em;
+    }
+    .sp-2{
+      margin-left: 6em;
+    }
+    .sp-3{
+      margin-left: 5.2em;
+    }
+    .sp-4{
+      margin-left: 7.1em;
+    }
+    @media (max-width:600px){
+      .card{
+        display: block;
+      }
+    }
+    @media (min-width:600px) {
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(30, 54%, 90%);
+      }
+      .card{
+        display: block;
+        border-radius: 1.5em;
+        width: 100vh;
+        background: white;
+        margin-top: 3em;
+        margin-bottom: 3em;
+      }
+      .sec_top-img{
+        height: 80%;
+        padding: 1.6em;
+      }
+      .sec-top-im{
+      border-radius: 1.5em;
+      }
+      
+      .title{
+        font-size: 2.2em;
+        word-spacing: 0.15em;
+        letter-spacing: 0.05em;
+        margin-top: -0.8em;
+      }
+      .title-br{
+        display: none;
+      }
+      .main_sec_cont,.prep-sec-cont,.ingr-sec-cont,.ins-sec-cont{
+        padding:1.6em ;
+      }
+      .space-span{
+        margin-left: 20em;
+        font-weight: 600;
+      }
+      .h6-1{
+        margin-left: 8em;
+      }
+      .sp-2{
+        margin-left: 21em;
+      }
+      .sp-3{
+        margin-left: 20.3em;
+      }
+      .sp-4{
+        margin-left: 22.4em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <section id="top-img">
+      <div class="sec_top-img">
+        <img src="assets/images/image-omelette.jpeg" class="sec-top-im">
+      </div>
+    </section>
+    <section id="main-sec">
+      <div class="main_sec_cont">
+        <h1 class="title">Simple Omelette Recipe</h1>
+        <p class="sec_txt_p1">An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+        to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+      </div>
+    </section>
+    <section id="prep-sec">
+      <div class="prep-sec-cont">
+        <h5 class="prep-title">Preparation time</h5>
+        <div class="pr-sec-list">
+          <ul>
+            <li><span>Total:</span>Approximately 10<p class="prep-p">minutes</p></li>
+            <li><span>Preparation:</span>5 minutes</li>
+            <li><span>Cooking:</span>5 minutes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="ingre-sec">
+      <div class="ingr-sec-cont">
+        <h2 class="in-title">Ingredients</h2>
+        <div class="ingr-sec-list">
+          <ul>
+            <li><span class="spac-span">2-3 large eggs</span></li>
+            <li><span class="spac-span">Salt, to taste</span></li>
+            <li><span class="spac-span">Pepper, to taste</span></li>
+            <li><span class="spac-span">1 tablespoon of butter or oil</span></li>
+            <li><span class="spac-span">Optional fillings: cheese, diced</span> <p class="spn-sp">vegetables, cooked meats, herbs</p></li>
+          </ul>      
+        </div>
+      </div>
+    </section>
+    <section id="liner">
+      <hr class="hr-1">
+    </section>
+    
+    <section id="inst-sec">
+      <div class="ins-sec-cont">
+        <h2 class="in-title">Instructions</h2>
+        <div class="pr-sec-list prp-list">
+          <ol>
+            <li><span class="sp-san">Beat the eggs:</span>In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+              You can add a tablespoon of water or milk for a fluffier texture.</li>
+            <li><span>Heat the pan:</span>Place a non-stick frying pan over medium heat and add butter or oil.</li>
+            <li><span>Cook the omelette:</span>Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
+              the eggs evenly coat the surface.</li>
+            <li><span>Add fillings (optional):</span>When the eggs begin to set at the edges but are still slightly runny in the 
+              middle, sprinkle your chosen fillings over one half of the omelette.</li>
+            <li><span>Fold and serve:</span>:As the omelette continues to cook, carefully lift one edge and fold it over the 
+              fillings. Let it cook for another minute, then slide it onto a plate.</li>
+            <li><span>Enjoy:</span>Serve hot, with additional salt and pepper if needed.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    
+    <section id="liner">
+      <hr class="hr-1">
+    </section>
+  
+    <section id="nutr-sec">
+      <div class="nutr-sec-cont">
+        <h2 class="in-title">Nutrition</h2>
+        <div class="nutr-sec-list">
+          <p class="nutr-sec-txt">The table below shows nutritional values per serving without the additional fillings.</p><br>
+          <h6 class="h6-1">Calories <span class="space-span">277kcal</span></h6>
+          <hr class="hr-2">
+          <h6 class="h6-1">Carbs <span class="space-span  sp-2">0g</span></h6>
+          <hr class="hr-2">
+          <h6 class="h6-1">Protein <span class="space-span sp-3">20g</span></h6>
+          <hr class="hr-2">
+          <h6 class="h6-1">Fat <span class="space-span sp-4">22g</span></h6>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</body>
+</html>
